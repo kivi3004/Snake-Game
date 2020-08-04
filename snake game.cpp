@@ -1,6 +1,18 @@
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+
+#ifdef __WIN32
 #include<conio.h>
 #include<windows.h>
+#endif
+
+
+#include <iostream>
+#include<stdlib.h>
+
+#ifdef __linux
+#include "func.hpp"
+#endif
+
 using namespace std;
 bool game;
 const int width =50;
@@ -21,7 +33,13 @@ void setup(){
     score =0;
 }
 void draw(){
+    #ifdef __WIN32
     system("cls");
+    #endif
+    #ifdef __linux
+    system("clear");
+    #endif
+
     cout<<"\n\n\n\n\n\n\n";
     for(int i=0; i<=width; i++)
         cout<<"H";
@@ -51,7 +69,7 @@ void draw(){
     }
     for(int i=0; i<=width; i++)
         cout<<"H";
-    cout<<"\n\n\n\nSCORE :   "<<score<<endl<<"LENGTH:   "<<ntail;
+    cout<<"\n\n\n\nSCORE :   "<<score<<endl<<"LENGTH:   "<<ntail<< flush;
 }
 void input(){
     if(_kbhit()){
@@ -119,6 +137,11 @@ int main(){
         draw();
         input();
         logic();
-        Sleep(9);
+        #ifdef __WIN32
+        sleep(9);
+        #endif
+        #ifdef __linux
+        usleep(100000);
+        #endif
     }
 }
