@@ -38,7 +38,7 @@ void setup(){
 }
 void draw(){
     printf("\033[0;0H");
-    cout<<"\n\n\n\n\n\n\n";
+    // cout<<"\n\n\n\n\n\n\n";
     for(int i=0; i<=width; i++)
         cout<<"H";
     cout<<endl;
@@ -74,11 +74,11 @@ void input(){
         switch(_getch()){
             case 'a' : dir = LEFT;
                     break;
-            case 'd' : dir = RIGHT;
+            case 'l' : dir = RIGHT;
                     break;
-            case 'w' : dir = UP;
+            case 't' : dir = UP;
                     break;
-            case 's' : dir = DOWN;
+            case 'b' : dir = DOWN;
                     break;
             case 'x' : gameover = true;
                     break;
@@ -137,7 +137,7 @@ int main(){
         logic();
 
         #ifdef __WIN32
-        sleep(9);
+        Sleep(100);
         #endif
         #ifdef __linux
         usleep(100000);
