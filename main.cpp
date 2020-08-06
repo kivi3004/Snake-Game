@@ -137,7 +137,7 @@ int main(){
         logic();
 
         #ifdef __WIN32
-        sleep(9);
+        Sleep(100);
         #endif
         #ifdef __linux
         usleep(100000);
