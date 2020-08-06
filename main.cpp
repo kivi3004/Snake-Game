@@ -1,5 +1,5 @@
 #include <iostream>
-#include<stdlib.h>
+#include <stdlib.h>
 
 #ifdef __WIN32
 #include<conio.h>
@@ -12,7 +12,7 @@
 #endif
 
 using namespace std;
-bool game;
+bool gameover;
 const int width =50;
 const int height =20;
 int x, y, fx, fy;
@@ -22,7 +22,7 @@ int tailX[100], tailY[100];
 enum Direction {STOP=0, LEFT, RIGHT, UP, DOWN};
 Direction dir;
 void setup(){
-    game = false;
+    gameover = false;
     dir = STOP;
     x = width/2;
     y = height/2;
@@ -80,7 +80,7 @@ void input(){
                     break;
             case 'b' : dir = DOWN;
                     break;
-            case 'x' : game = true;
+            case 'x' : gameover = true;
                     break;
         }
     }
@@ -109,7 +109,7 @@ void logic(){
         break;
     }
     if(x >width || x<0 || y>height || y<0)
-        game = true;
+        gameover = true;
 
     if(x >= width)
         x=0;
@@ -121,7 +121,7 @@ void logic(){
         y  = height-1;
     for(int i=0; i<ntail; i++)
         if(tailX[i] == x && tailY[i] == y)
-        game = true;
+        gameover = true;
     if(x == fx && y== fy){
         score +=10;
         fx = rand()%width;
@@ -131,10 +131,11 @@ void logic(){
 }
 int main(){
     setup();
-    while(!game){
+    while(!gameover){
         draw();
         input();
         logic();
+
         #ifdef __WIN32
         sleep(9);
         #endif
