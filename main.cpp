@@ -67,18 +67,18 @@ void draw(){
     }
     for(int i=0; i<=width; i++)
         cout<<"H";
-    cout<<"\n\n\n\nSCORE :   "<<score<<endl<<"LENGTH:   "<<ntail<< flush;
+    cout<<"\n\n\n\nSCORE :   "<<score<<endl<<"LENGTH:   "<<ntail<< endl;
 }
 void input(){
     if(_kbhit()){
         switch(_getch()){
             case 'a' : dir = LEFT;
                     break;
-            case 'l' : dir = RIGHT;
+            case 'd' : dir = RIGHT;
                     break;
-            case 't' : dir = UP;
+            case 'w' : dir = UP;
                     break;
-            case 'b' : dir = DOWN;
+            case 's' : dir = DOWN;
                     break;
             case 'x' : gameover = true;
                     break;
