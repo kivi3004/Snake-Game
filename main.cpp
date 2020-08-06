@@ -22,6 +22,12 @@ int tailX[100], tailY[100];
 enum Direction {STOP=0, LEFT, RIGHT, UP, DOWN};
 Direction dir;
 void setup(){
+    #ifdef __WIN32
+    system("cls");
+    #endif
+    #ifdef __linux
+    system("clear");
+    #endif
     gameover = false;
     dir = STOP;
     x = width/2;
@@ -31,13 +37,7 @@ void setup(){
     score =0;
 }
 void draw(){
-    #ifdef __WIN32
-    system("cls");
-    #endif
-    #ifdef __linux
-    system("clear");
-    #endif
-
+    printf("\033[0;0H");
     cout<<"\n\n\n\n\n\n\n";
     for(int i=0; i<=width; i++)
         cout<<"H";
