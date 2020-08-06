@@ -49,18 +49,3 @@ bool _kbhit()
 
     return byteswaiting > 0;
 }
-
-/*
-int main(int argc, char** argv) {
-    printf("Press any key");
-    while (! kbhit()) {
-        printf(".");
-        fflush(stdout);
-        usleep(1000);
-    }
-    printf("\nDone.\n");
-
-    return 0;
-} 
-
-*/
