@@ -1,13 +1,11 @@
-// #include<bits/stdc++.h>
+#include <iostream>
+#include<stdlib.h>
 
 #ifdef __WIN32
 #include<conio.h>
 #include<windows.h>
 #endif
 
-
-#include <iostream>
-#include<stdlib.h>
 
 #ifdef __linux
 #include "func.hpp"
